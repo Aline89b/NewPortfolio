@@ -1,0 +1,32 @@
+---
+const { image, title, urlDemo, urlCode, text } = Astro.props;
+---
+
+<div class="cardCont relative flex h-full w-full">
+  <img
+    class="cardFront object-cover rounded-2xl w-full"
+    src={image}
+    alt={title}
+  />
+
+  <div class="absolute inset-0 flex justify-center items-center">
+    <div class="cardBack absolute card">
+      <div class="card-body w-full h-full">
+        <h2 class="card-title">{title}</h2>
+        <p>{text}</p>
+        <div class="card-actions justify-end">
+          <a
+            href={urlCode}
+            class="btn bg-[#FFCC4C] hover:bg-[#0012ff] hover:text-white border-[#F5F5F5] btn-info font font-extrabold"
+            >CODE</a
+          >
+          <a
+            href={urlDemo}
+            class="btn bg-[#FFCC4C] hover:bg-[#0012ff] border-[#F5F5F5] btn-info font font-extrabold"
+            >DEMO</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

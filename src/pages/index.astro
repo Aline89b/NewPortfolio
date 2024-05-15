@@ -1,0 +1,186 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/card.astro";
+import About from "../components/about.astro";
+import Icons from "../components/icons.astro";
+---
+
+<Layout title="Front end developer - Portfolio.">
+  <div class="flex justify-center flex-wrap">
+    <div
+      class="h-[calc(100vh - 100px)] lg:grid w-full flex flex-col-reverse md:grid-cols-2 lg:grid-cols-7 auto-rows-min gap-4 p-5"
+    >
+      <div class="row-span-1 row-start-2 col-span-2 lg:row-span-2">
+        <Card
+          urlCode="https://github.com/Aline89b/countries_flag"
+          urlDemo="https://countries-flag-e2ebtgvcy-aline89b.vercel.app/"
+          class="h-full"
+          image="/screenshot.PNG"
+          title="Flags"
+          animation="flip"
+          text="App per trovare la tua bandiera e leggere alcune info sul paese relativo. Sviluppato in React e typescript. Progetto Frontend Mentor"
+        />
+      </div>
+      <div class="col-span-3 col-start-3">
+        <div
+          class="flex justify-around bg-[#0011ff1d] rounded p-2 overflow-hidden relative"
+        >
+          <Icons
+            icon="angular.png"
+            title="Angularjs Framework"
+            size="50px"
+            className="box"
+            class="absolute"
+          />
+          <Icons
+            icon="react.png"
+            title="Reactjs Framework"
+            size="50px"
+            className="box"
+            class="absolute"
+          />
+          <Icons
+            icon="nodejs.png"
+            title="Nodejs"
+            size="50px"
+            className="box"
+            class="absolute"
+          />
+          <Icons
+            icon="next.png"
+            title="Nextjs"
+            size="50px"
+            className="box"
+            class="absolute"
+          />
+          <Icons
+            icon="git.png"
+            title="git"
+            size="50px"
+            className="box"
+            class="absolute"
+          />
+          <Icons
+            icon="figma.png"
+            title="Nextjs"
+            size="50px"
+            className="box"
+            class="absolute"
+          />
+        </div>
+      </div>
+      <div
+        class="order-2 col-span-3 row-span-2 lg:col-span-2 lg:col-start-6 lg:row-span-4"
+      >
+        <About />
+      </div>
+
+      <div class="col-span-2 row-span-2 row-start-3">
+        <Card
+          urlDemo="https://footprint-project.vercel.app/"
+          urlCode="https://github.com/Aline89b/footprint-project"
+          image="/screenFOOT.png"
+          animation="animate-fadeIn"
+          title="Footprint calculator"
+          text="App per calcolare la footprint di un viaggio aereo. Sviluppato in Nextjs usando MongoDB come db per salvare i contatti della newsletter"
+        />
+      </div>
+      <div class="col-span-3 row-span-2 col-start-3 row-start-2">
+        <Card
+          urlCode="https://github.com/Aline89b/receipesAppReact"
+          urlDemo="https://aline89b.github.io/receipesAppReact/"
+          image="/recipe-app-screenshot.png"
+          animation="animate-fadeIn"
+          title=" Veg Recipes App"
+          text="Applicazione front-end sviluppata in React per cercare ricette vegetariane e salvare le preferite"
+        />
+      </div>
+      <div class="col-span-3 col-start-3 order-3">
+        <div
+          class="rounded flex p-2 bg-center justify-center bg-[url('https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg')]"
+        >
+          <a
+            href="http://localhost:4321/CV_FRONTEND_DEV.pdf"
+            class="btn glass hover:bg-[#0012ff] bg-[#FFCC4C] border-[#0B0C49] btn-info font font-extrabold"
+            download>Download my CV &#128521</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+<script>
+  import { gsap } from "gsap/dist/gsap";
+  import { Flip } from "gsap/Flip";
+
+  gsap.to(".WA", {
+    scale: 1.2,
+    ease: "bounce",
+    repeat: -1,
+    repeatDelay: 2,
+  });
+
+  const b1 =
+    "linear-gradient(50deg, rgba(255,204,76,1) 30%, rgba(9,9,121,1) 88%, rgba(0,18,255,1) 100%)";
+
+  const b2 =
+    " linear-gradient(90deg, rgba(0,18,255,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%), linear-gradient(50deg, rgba(255,204,76,1) 30%, rgba(9,9,121,1) 88%, rgba(0,18,255,1) 100%)";
+
+  gsap.fromTo(
+    "nav",
+    { background: b1 },
+    { ease: "none", duration: 6, background: b2, repeat: -1, yoyo: true }
+  );
+
+  gsap.set(".box", {
+    x: (i) => i * 50,
+  });
+
+  gsap.to(".box", {
+    duration: 5,
+    ease: "none",
+    x: "-=300",
+    modifiers: {
+      x: gsap.utils.unitize((x) => parseInt(x) % 300),
+    },
+    repeat: -1,
+  });
+
+  gsap.utils.toArray(".cardCont").forEach(function (card: any) {
+    gsap.set(card, {
+      transformStyle: "preserve-3d",
+      transformPerspective: 1000,
+    });
+    const q = gsap.utils.selector(card);
+    const front = q(".cardFront");
+    const back = q(".cardBack");
+
+    gsap.set(back, { rotationY: -180, opacity: 0 });
+
+    const tl = gsap
+      .timeline({ paused: true })
+      .to(front, { duration: 1, rotationY: 180, opacity: 0 })
+      .to(
+        back,
+        {
+          duration: 1,
+          rotationY: 0,
+          opacity: 1,
+          backgroundColor: "#0B0C49",
+          border: 2,
+          borderColor: "#fff",
+          color: "#fff",
+          borderRadius: 5,
+        },
+        0
+      )
+      .to(card, { z: 50 }, 0)
+      .to(card, { z: 0 }, 0.5);
+    card.addEventListener("mouseenter", function () {
+      tl.play();
+    });
+    card.addEventListener("mouseleave", function () {
+      tl.reverse();
+    });
+  });
+</script>
