@@ -6,11 +6,13 @@ import Icons from "../components/icons.astro";
 ---
 
 <Layout title="Front end developer - Portfolio.">
-  <div class="flex justify-center flex-wrap">
+  <div class="flex justify-center flex-wrap pb-0 mb-0">
     <div
-      class="h-[calc(100vh-130px)] overflow-auto lg:grid w-full flex flex-col-reverse md:grid-cols-2 lg:grid-cols-7 auto-rows-min gap-4 p-5"
+      class="mb-20 lg:grid w-full flex flex-col-reverse md:grid-cols-2 lg:grid-cols-7 auto-rows-min gap-4 p-2"
     >
-      <div class="row-span-1 row-start-2 col-span-2 lg:row-span-2">
+      <div
+        class="row-span-1 row-start-2 col-span-2 hover:mt-12 hover:mb-16 lg:row-span-2"
+      >
         <Card
           urlCode="https://github.com/Aline89b/countries_flag"
           urlDemo="https://countries-flag-e2ebtgvcy-aline89b.vercel.app/"
@@ -110,7 +112,6 @@ import Icons from "../components/icons.astro";
 </Layout>
 <script>
   import { gsap } from "gsap/dist/gsap";
-  import { Flip } from "gsap/Flip";
 
   gsap.to(".WA", {
     scale: 1.2,
