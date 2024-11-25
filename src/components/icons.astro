@@ -1,23 +1,14 @@
 ---
-const { icon, desc, size, color, className } = Astro.props;
-/*import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.to("img", {
-  scrollTrigger: "img", // start the animation when ".box" enters the viewport (once)
-  x: 500,
-  rotation: 360,
-  duration: 3,
-});*/
+const { icon, title, size, color, className } = Astro.props;
 ---
 
-<img
-  src={icon}
-  alt={desc}
-  width={size}
-  height={size}
-  style={`fill: ${color};`}
-  class={className}
-/>
+<div data-tip={title} class="group relative inline-block tooltip tooltip-right">
+  <img
+    src={icon}
+    alt={title}
+    width={size}
+    height={size}
+    style={`fill: ${color};`}
+    class={`cursor-pointer ${className}`}
+  />
+</div>

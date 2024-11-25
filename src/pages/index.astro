@@ -31,7 +31,7 @@ import Icons from "../components/icons.astro";
             title="Angularjs Framework"
             size="50px"
             className="box"
-            class="absolute"
+            class="icon"
           />
           <Icons
             icon="react.png"
@@ -119,31 +119,16 @@ import Icons from "../components/icons.astro";
     repeat: -1,
     repeatDelay: 2,
   });
-  /*
-  const b1 =
-    "linear-gradient(50deg, rgba(255,204,76,1) 30%, rgba(9,9,121,1) 88%, rgba(0,18,255,1) 100%)";
-
-  const b2 =
-    " linear-gradient(90deg, rgba(0,18,255,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%), linear-gradient(50deg, rgba(255,204,76,1) 30%, rgba(9,9,121,1) 88%, rgba(0,18,255,1) 100%)";
-
-  gsap.fromTo(
-    "nav",
-    { background: b1 },
-    { ease: "none", duration: 6, background: b2, repeat: -1, yoyo: true }
-  );
-*/
-  gsap.set(".box", {
-    x: (i) => i * 50,
+  const icons = document.querySelectorAll<HTMLElement>(".box");
+  gsap.set(icons, {
+    x: (i) => i * 80, // Set initial x offset based on index for spacing
   });
 
   gsap.to(".box", {
-    duration: 5,
-    ease: "none",
-    x: "-=300",
-    modifiers: {
-      x: gsap.utils.unitize((x) => parseInt(x) % 300),
-    },
-    repeat: -1,
+    x: "-=500", // Move icons left
+    duration: 10,
+    ease: "linear",
+    repeat: -1, // Infinite loop
   });
 
   gsap.utils.toArray(".cardCont").forEach(function (card: any) {
