@@ -2,7 +2,10 @@
 const { icon, title, size, color, className } = Astro.props;
 ---
 
-<div data-tip={title} class="group relative inline-block tooltip tooltip-right">
+<div
+  data-tip={title}
+  class="group relative inline-block tooltip tooltip-right w-10 h-10"
+>
   <img
     src={icon}
     alt={title}

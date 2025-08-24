@@ -1,0 +1,78 @@
+---
+const services = [
+  {
+    title: "Landing page",
+    description:
+      "Landing page professionali e semplici da gestire, pensate per presentarti al meglio.",
+    icon: "🧑‍💻",
+    buttonText: "Scopri di più",
+    features: [
+      "Layout ottimizzato per Ads",
+      "Call to action mirate",
+      "Struttura veloce e leggera",
+      "Integrazione form/newsletter",
+    ],
+  },
+  {
+    title: "Siti web",
+    description:
+      "Un sito su misura per far conoscere la tua attività e acquisire clienti.",
+    icon: "🏪",
+    buttonText: "Richiedi preventivo",
+    features: [
+      "Design personalizzato",
+      "Responsive mobile-first",
+      "SEO base inclusa",
+      "Facile da aggiornare",
+    ],
+  },
+];
+---
+
+<div class="flex flex-col items-center justify-center p-4 h-full">
+  <h1 class="text-3xl font-bold mb-8">Servizi offerti</h1>
+  
+  <!-- grid con righe tutte della stessa altezza -->
+  <div class="grid md:grid-cols-2 gap-6 auto-rows-fr w-full">
+    {
+      services.map((s) => (
+        <div class="card bg-base-100 shadow-sm h-full flex flex-col md:max-h-[calc(100%-1rem)]">
+          <!-- body che riempie la cella -->
+          <div class="card-body flex flex-col flex-grow md:p-3 lg:p-6 md:max-h-96 md:overflow-auto ">
+            <div class="flex justify-between flex-wrap md:max-h-96">
+              <h2 class="text-3xl font-bold">{s.title}</h2>
+            </div>
+            <p class="mt-2 md:mt-1 text-sm">{s.description}</p>
+
+            <ul class="mt-4 md:mt-1 flex flex-col gap-1 text-xs lg:text-md flex-grow">
+              {s.features.map((f) => (
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="size-4 me-2 inline-block text-success"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-xl">{f}</span>
+                </li>
+              ))}
+            </ul>
+
+            <!-- bottone sempre in basso -->
+            <div class="mt-auto">
+              <button class="btn btn-primary btn-block">{s.buttonText}</button>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

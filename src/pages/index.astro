@@ -3,102 +3,105 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/card.astro";
 import About from "../components/about.astro";
 import Icons from "../components/icons.astro";
+import Skills from "@/components/skills.astro";
 ---
 
 <Layout title="Front end developer - Portfolio.">
-  <div class="flex justify-center flex-wrap">
+  <div class="flex flex-col flex-1 justify-center">
     <div
-      class="mb-20 lg:grid w-full flex flex-col-reverse md:grid-cols-2 lg:grid-cols-7 auto-rows-min gap-4 p-2"
+      class="lg:grid w-full md:grid-cols-2 lg:grid-cols-7 grid-rows-4 h-[calc(100vh-200px)] gap-3 p-2"
     >
+      <!-- About - Colonna sinistra -->
       <div
-        class="row-span-1 row-start-2 col-span-2 hover:mt-12 hover:mb-16 lg:row-span-2"
-      >
-        <Card
-          urlCode="https://github.com/Aline89b/countries_flag"
-          urlDemo="https://countries-flag-e2ebtgvcy-aline89b.vercel.app/"
-          image="/screenshot.PNG"
-          title="Flags"
-          animation="flip"
-          text="App per trovare la tua bandiera e leggere alcune info sul paese relativo. Sviluppato in React e typescript. Progetto Frontend Mentor"
-        />
-      </div>
-      <div class="col-span-3 col-start-3">
-        <div
-          class="flex justify-around bg-[#424242] rounded p-2 overflow-hidden relative"
-        >
-          <Icons
-            icon="angular.png"
-            title="Angularjs Framework"
-            size="50px"
-            className="box"
-            class="icon"
-          />
-          <Icons
-            icon="react.png"
-            title="Reactjs Framework"
-            size="50px"
-            className="box"
-            class="absolute"
-          />
-          <Icons
-            icon="nodejs.png"
-            title="Nodejs"
-            size="50px"
-            className="box"
-            class="absolute"
-          />
-          <Icons
-            icon="next.png"
-            title="Nextjs"
-            size="50px"
-            className="box"
-            class="absolute"
-          />
-          <Icons
-            icon="git.png"
-            title="git"
-            size="50px"
-            className="box"
-            class="absolute"
-          />
-          <Icons
-            icon="figma.png"
-            title="Nextjs"
-            size="50px"
-            className="box"
-            class="absolute"
-          />
-        </div>
-      </div>
-      <div
-        class="order-2 col-span-3 row-span-2 lg:col-span-2 lg:col-start-6 lg:row-span-4"
+        class="col-span-2 row-span-4 lg:col-span-2 lg:col-start-1 lg:row-start-1"
       >
         <About />
       </div>
 
-      <div class="col-span-2 row-span-2 row-start-3">
+      <!-- Skills - Centro, righe 1-3 -->
+      <div class="lg:col-span-3 lg:col-start-3 lg:row-span-3 lg:row-start-1">
+        <Skills />
+      </div>
+
+      <!-- Flags - Destra, riga 1 -->
+      <div class="lg:col-span-2 lg:col-start-6 lg:row-start-1 lg:row-span-1">
+        <Card
+          urlCode="https://github.com/Aline89b/discoAppAngular"
+          urlDemo="https://disco-app-angular.vercel.app/"
+          image="/screenshotAngularProject.webp"
+          title="Disco App per la gestione delle liste"
+          skills={[
+            "Angular",
+            "Typescript",
+            "Nodejs",
+            "MongoDB",
+            "TailwindCSS",
+            "DaisyUI",
+          ]}
+          text={`DiscoApp è un’app full stack sviluppata in Angular, Node.js e MongoDB per semplificare la gestione delle liste nei locali.
+Permette ai PR di creare e gestire liste digitali, inviare QR code via SMS (Twilio) e validare l’ingresso con QR scanner all’entrata.
+Include autenticazione multi-ruolo, CRUD operations per eventi e utenti, e un’interfaccia curata con TailwindCSS + DaisyUI.
+       `}
+        />
+      </div>
+
+      <!-- Footprint - Destra, righe 2-3 (PIU' GRANDE) -->
+      <div class="lg:col-span-2 lg:col-start-6 lg:row-start-2 lg:row-span-2">
         <Card
           urlDemo="https://footprint-project.vercel.app/"
           urlCode="https://github.com/Aline89b/footprint-project"
-          image="/screenFOOT.png"
-          animation="animate-fadeIn"
+          skills={[
+            "NextJs",
+            "MongoDB",
+            "Climatiq API",
+            "MaterialUI",
+            "TailwindCSS",
+          ]}
+          image="/screenshotNextProject.webp"
           title="Footprint calculator"
-          text="App per calcolare la footprint di un viaggio aereo. Sviluppato in Nextjs usando MongoDB come db per salvare i contatti della newsletter"
+          text={`Web app no-profit in Next.js per calcolare l’impronta di carbonio dei viaggi aerei.
+Funzionalità:
+
+Calcolo footprint tramite API aggiornata
+
+Form con Material UI per un’esperienza intuitiva
+
+Raccolta contatti e iscrizione a newsletter (MongoDB)
+
+Estensibile ad altri mezzi di trasporto e progetti solidali.`}
         />
       </div>
-      <div class="col-span-3 row-span-2 col-start-3 row-start-2">
+
+      <!-- Veg Recipes - Destra, riga 4 -->
+      <div class="lg:col-span-2 lg:col-start-6 lg:row-start-4 lg:row-span-1">
         <Card
-          urlCode="https://github.com/Aline89b/receipesAppReact"
-          urlDemo="https://aline89b.github.io/receipesAppReact/"
-          image="/recipe-app-screenshot.png"
-          animation="animate-fadeIn"
-          title=" Veg Recipes App"
-          text="Applicazione front-end sviluppata in React per cercare ricette vegetariane e salvare le preferite"
+          urlCode="https://github.com/Aline89b/landing-page"
+          urlDemo="https://landing-page-delta-lac-37.vercel.app/"
+          image="/screenshotLanding.webp"
+          skills={[
+            "Design UX/UI",
+            "MailerLite",
+            "WordPress",
+            "NextJS",
+            "Tailwind",
+            "ShadcnUI",
+          ]}
+          title="Landing Page for collecting leads for a eco accomodation portal"
+          text={`Landing page sviluppata in Next.js come parte del progetto del portale WordPress per strutture ricettive ecosostenibili.
+L’obiettivo era testare l’interesse del target tramite campagne Ads, creando un funnel completo:
+
+Call to action mirate
+
+Integrazione con MailerLite per email automation
+
+Collegamento al portale in WordPress per la fase finale di iscrizione.`}
         />
       </div>
-      <div class="col-span-3 col-start-3 order-3">
+
+      <!-- CV Download - Centro, riga 4 -->
+      <div class="col-span-2 lg:col-span-2 lg:col-start-3 lg:row-start-4">
         <div
-          class="rounded flex p-2 bg-center justify-center bg-[url('https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg')]"
+          class="rounded flex p-2 bg-center justify-center bg-[url('https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg')] h-full items-center"
         >
           <a
             href="http://localhost:4321/CV_FRONTEND_DEV.pdf"
@@ -107,65 +110,31 @@ import Icons from "../components/icons.astro";
           >
         </div>
       </div>
+
+      <!-- Tech Icons - Centro, riga 4 -->
+      <div class="lg:col-span-1 lg:col-start-5 lg:row-start-4">
+        <div
+          class="grid grid-cols-3 grid-rows-2 bg-[#424242] w-full h-full place-items-center"
+        >
+          <Icons
+            icon="angular.png"
+            title="Angularjs Framework"
+            size="40px"
+            className="box"
+            class="icon"
+          />
+          <Icons
+            icon="react.png"
+            title="Reactjs Framework"
+            size="40px"
+            className="box"
+          />
+          <Icons icon="nodejs.png" title="Nodejs" size="40px" />
+          <Icons icon="next.png" title="Nextjs" size="40px" />
+          <Icons icon="git.png" title="git" size="40px" />
+          <Icons icon="figma.png" title="Figma" size="40px" />
+        </div>
+      </div>
     </div>
   </div>
 </Layout>
-<script>
-  import { gsap } from "gsap/dist/gsap";
-
-  gsap.to(".WA", {
-    scale: 1.2,
-    ease: "bounce",
-    repeat: -1,
-    repeatDelay: 2,
-  });
-  const icons = document.querySelectorAll<HTMLElement>(".box");
-  gsap.set(icons, {
-    x: (i) => i * 80, // Set initial x offset based on index for spacing
-  });
-
-  gsap.to(".box", {
-    x: "-=500", // Move icons left
-    duration: 10,
-    ease: "linear",
-    repeat: -1, // Infinite loop
-  });
-
-  gsap.utils.toArray(".cardCont").forEach(function (card: any) {
-    gsap.set(card, {
-      transformStyle: "preserve-3d",
-      transformPerspective: 1000,
-    });
-    const q = gsap.utils.selector(card);
-    const front = q(".cardFront");
-    const back = q(".cardBack");
-
-    gsap.set(back, { rotationY: -180, opacity: 0 });
-
-    const tl = gsap
-      .timeline({ paused: true })
-      .to(front, { duration: 1, rotationY: 180, opacity: 0 })
-      .to(
-        back,
-        {
-          duration: 1,
-          rotationY: 0,
-          opacity: 1,
-          backgroundColor: "#141010",
-          border: 2,
-          borderColor: "#fff",
-          color: "#fff",
-          borderRadius: 5,
-        },
-        0
-      )
-      .to(card, { z: 50 }, 0)
-      .to(card, { z: 0 }, 0.5);
-    card.addEventListener("mouseenter", function () {
-      tl.play();
-    });
-    card.addEventListener("mouseleave", function () {
-      tl.reverse();
-    });
-  });
-</script>
