@@ -1,8 +1,4 @@
 ---
-import Icons from "./icons.astro";
-import { useTranslations } from "astro-i18next";
-import { t } from "astro-i18next";
-
 const currentPath = Astro.url.pathname;
 const otherLocale = currentPath.startsWith("/en") ? "it" : "en";
 const switchPath = currentPath.startsWith("/en")
