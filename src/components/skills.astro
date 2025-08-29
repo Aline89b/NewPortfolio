@@ -29,22 +29,23 @@ const services = [
 ];
 ---
 
-<div class="flex flex-col items-center justify-center p-4 h-full">
-  <h1 class="text-3xl font-bold mb-8">Servizi offerti</h1>
-  
+<div
+  class="flex flex-col items-center justify-center p-4 h-full text-brazil-white"
+>
+  <h1 class="text-3xl font-bold mb-8 text-brazil-blue">Servizi offerti</h1>
+
   <!-- grid con righe tutte della stessa altezza -->
-  <div class="grid md:grid-cols-2 gap-6 auto-rows-fr w-full">
+  <div class="grid md:grid-cols-2 gap-6 auto-rows-fr w-full h-full">
     {
       services.map((s) => (
-        <div class="card bg-base-100 shadow-sm h-full flex flex-col md:max-h-[calc(100%-1rem)]">
-          <!-- body che riempie la cella -->
-          <div class="card-body flex flex-col flex-grow md:p-3 lg:p-6 md:max-h-96 md:overflow-auto ">
-            <div class="flex justify-between flex-wrap md:max-h-96">
-              <h2 class="text-3xl font-bold">{s.title}</h2>
+        <div class="card bg-base-100 shadow-sm h-full flex flex-col items-between md:max-h-[calc(100%-1rem)] bg-brazil-blue/60">
+          <div class="card-body flex flex-col flex-grow md:p-3 lg:p-6 md:max-h-96">
+            <div class="flex items-between flex-wrap md:max-h-96">
+              <h2 class="text-xl font-bold">{s.title}</h2>
             </div>
-            <p class="mt-2 md:mt-1 text-sm">{s.description}</p>
+            <p class="mt-2 md:mt-1 text-xs">{s.description}</p>
 
-            <ul class="mt-4 md:mt-1 flex flex-col gap-1 text-xs lg:text-md flex-grow">
+            <ul class="flex flex-col gap-1 text-sm flex-grow">
               {s.features.map((f) => (
                 <li>
                   <svg
@@ -61,14 +62,15 @@ const services = [
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span class="text-xl">{f}</span>
+                  <span class="text-xs">{f}</span>
                 </li>
               ))}
             </ul>
 
-            <!-- bottone sempre in basso -->
-            <div class="mt-auto">
-              <button class="btn btn-primary btn-block">{s.buttonText}</button>
+            <div class="flex justify-center">
+              <button class="btn hover:bg-brazil-green hover:text-white bg-brazil-yellow font-extrabold mb-2">
+                {s.buttonText}
+              </button>
             </div>
           </div>
         </div>

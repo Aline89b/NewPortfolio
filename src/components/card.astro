@@ -1,8 +1,19 @@
 ---
-const { image, title, urlDemo, urlCode, text, skills = [] } = Astro.props;
+const {
+  image,
+  title,
+  urlDemo,
+  urlCode,
+  text,
+  skills = [],
+  index,
+} = Astro.props;
+const modalId = `modal-${index}`;
 ---
 
-<div class="card bg-base-100 shadow-sm w-full h-full relative overflow-hidden">
+<div
+  class="card bg-base-100 shadow-sm w-full h-full relative overflow-hidden mb-2"
+>
   <!-- immagine come sfondo -->
   <img
     src={image}
@@ -11,40 +22,108 @@ const { image, title, urlDemo, urlCode, text, skills = [] } = Astro.props;
   />
 
   <!-- overlay scuro -->
-  <div class="absolute inset-0 bg-black/80"></div>
+  <div class="absolute inset-0 bg-brazil-blue/80"></div>
 
   <!-- contenuto -->
   <div class="card-body relative z-10 flex flex-col justify-between">
-    <div class="flex">
-      <h2 class="text-white mb-2 mr-1">{title}</h2>
+    <!-- Titolo -->
+    <h2 class="text-white mb-2">{title}</h2>
+
+    <!-- Testo SOLO su mobile -->
+    <div class="block md:hidden">
       <div class="flex flex-wrap gap-1 mb-3">
         {
-          skills.map((skill: string) => (
-            <span class="badge badge-outline p-2 justify-around text-white border-white">
+          skills.map((skill) => (
+            <span class="badge badge-outline p-2 text-white border-white">
               {skill}
             </span>
           ))
         }
       </div>
+      <p class="text-white text-base">{text}</p>
     </div>
 
-    <div>
-      <p class="text-white text-sm">{text}</p>
-    </div>
-
-    <div class="card-actions justify-end mt-0">
+    <!-- Bottoni -->
+    <div class="card-actions justify-end mt-auto">
       <a
         href={urlDemo}
         target="_blank"
-        class="btn btn-sm bg-[#FFCC4C] hover:bg-[#0012ff] text-black hover:text-white border-0"
-        >Demo</a
+        class="btn btn-sm bg-brazil-yellow hover:bg-brazil-green text-black hover:text-white border-0"
       >
+        Demo
+      </a>
+
+      <!-- Details visibile solo su md+ -->
+      <label
+        for={modalId}
+        class="hidden md:inline-flex btn btn-sm bg-brazil-yellow hover:bg-brazil-green text-black hover:text-white border-0"
+      >
+        Details
+      </label>
+
       <a
         href={urlCode}
         target="_blank"
-        class="btn btn-sm bg-[#FFCC4C] hover:bg-[#0012ff] text-black hover:text-white border-0"
-        >Code</a
+        class="btn btn-sm bg-brazil-yellow hover:bg-brazil-green text-black hover:text-white border-0"
       >
+        Code
+      </a>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <input type="checkbox" id={modalId} class="modal-toggle" />
+  <div class="modal">
+    <div
+      class="modal-box relative bg-brazil-blue text-white max-w-2xl"
+      style="background-image: url({image}); background-size: cover; background-position: center;"
+    >
+      <!-- overlay scuro -->
+      <div class="absolute inset-0 bg-brazil-blue/80"></div>
+
+      <!-- contenuto -->
+      <div class="relative z-10">
+        <label
+          for={modalId}
+          class="btn btn-sm btn-circle absolute right-2 top-2 bg-brazil-yellow text-black hover:bg-brazil-green hover:text-white border-0"
+        >
+          ✕
+        </label>
+
+        <h3 class="text-lg font-bold mb-2">{title}</h3>
+
+        <!-- Skills -->
+        <div class="flex flex-wrap gap-1 mb-4">
+          {
+            skills.map((skill: string) => (
+              <span class="badge badge-outline p-2 text-white border-white">
+                {skill}
+              </span>
+            ))
+          }
+        </div>
+
+        <!-- Testo -->
+        <p class="mb-4">{text}</p>
+
+        <!-- Bottoni -->
+        <div class="flex gap-2 justify-end">
+          <a
+            href={urlDemo}
+            target="_blank"
+            class="btn btn-sm bg-brazil-yellow hover:bg-brazil-green text-black hover:text-white border-0"
+          >
+            Demo
+          </a>
+          <a
+            href={urlCode}
+            target="_blank"
+            class="btn btn-sm bg-brazil-yellow hover:bg-brazil-green text-black hover:text-white border-0"
+          >
+            Code
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

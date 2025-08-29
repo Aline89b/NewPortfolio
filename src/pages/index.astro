@@ -7,9 +7,9 @@ import Skills from "@/components/skills.astro";
 ---
 
 <Layout title="Front end developer - Portfolio.">
-  <div class="flex flex-col flex-1 justify-center">
+  <div class="flex flex-col flex-1 justify-center gap-2">
     <div
-      class="lg:grid w-full md:grid-cols-2 lg:grid-cols-7 grid-rows-4 h-[calc(100vh-200px)] gap-3 p-2"
+      class="lg:grid w-full md:grid-cols-2 lg:grid-cols-7 grid-rows-4 h-[calc(100vh-11em)] gap-3 p-2"
     >
       <!-- About - Colonna sinistra -->
       <div
@@ -99,22 +99,22 @@ Collegamento al portale in WordPress per la fase finale di iscrizione.`}
       </div>
 
       <!-- CV Download - Centro, riga 4 -->
-      <div class="col-span-2 lg:col-span-2 lg:col-start-3 lg:row-start-4">
+      <div class="col-span-2 lg:col-span-2 lg:col-start-3 lg:row-start-4 mt-2">
         <div
           class="rounded flex p-2 bg-center justify-center bg-[url('https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg')] h-full items-center"
         >
           <a
             href="http://localhost:4321/CV_FRONTEND_DEV.pdf"
-            class="btn glass hover:bg-[#0012ff] bg-[#FFCC4C] border-[#0B0C49] btn-info font font-extrabold"
+            class="btn glass hover:bg-brazil-green bg-brazil-yellow border-[#0B0C49] font font-extrabold"
             download>Download my CV &#128521</a
           >
         </div>
       </div>
 
       <!-- Tech Icons - Centro, riga 4 -->
-      <div class="lg:col-span-1 lg:col-start-5 lg:row-start-4">
+      <div class="lg:col-span-1 lg:col-start-5 lg:row-start-4 mt-2">
         <div
-          class="grid grid-cols-3 grid-rows-2 bg-[#424242] w-full h-full place-items-center"
+          class="grid grid-cols-3 gap-2 p-2 grid-rows-2 bg-brazil-blue/85 rounded w-full h-full place-items-center"
         >
           <Icons
             icon="angular.png"
