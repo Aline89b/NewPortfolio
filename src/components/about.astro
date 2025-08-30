@@ -1,39 +1,40 @@
+---
+interface AboutProps {
+  text: string;
+}
+const { text } = Astro.props;
+---
+
 <div
-  class="flex rounded bg-brazil-blue/60 text-[#F5F5F5] lg:flex-col flex-col md:card-side w-full h-full"
+  class="flex rounded bg-brazil-blue/60 text-brazil-white mb-1 lg:flex-col flex-col md:card-side w-full h-full"
 >
-  <figure class="min-h-32 max-h52">
-    <img class="object-cover h-full rounded" src="./avatar.jpeg" alt="Album" />
+  <figure class="min-h-32">
+    <img
+      class="object-cover h-full rounded"
+      src="/public/avatar.jpeg"
+      alt="Avatar"
+    />
   </figure>
-  <div class="card-body h-[calc(100%-1rem)] overflow-y-auto">
-    <h2 class="card-title">Hi there! &#128512</h2>
-    <p class="text-lg">
-      Hi, I’m Aline. <br /> Self-taught frontend developer and web design enthusiast
-      with a background in tourism. After several years working in the travel industry,
-      I decided to follow my passion for digital creativity and started studying
-      web development. I’ve been focusing on frontend technologies like <strong
-        >HTML</strong
-      >, <strong>CSS</strong>, <strong>JAVASCRIPT</strong>, and modern
-      frameworks like <strong>Angular</strong> and <strong>Nextjs</strong>. Now
-      I’m diving deeper into <strong>UI and UX design</strong>, learning how to
-      build not only functional interfaces but also enjoyable user experiences —
-      mostly using Figma and design systems. I’m currently working on two
-      personal projects: – a total improvement of my carbon footprint calculator
-      app using Next.js and a portal for booking eco accomodations built using
-      Wordpress. business idea. I’m now looking to collaborate on real-world
-      projects — whether it’s designing a clean landing page, building new
-      features, or supporting other freelancers or web agencies with frontend
-      work. I’m based in Italy, but I’m open to remote work opportunities and
-      collaborations with teams around the world.<br />
-      <em>I’m here to help — and always ready to learn more.</em>
-    </p>
-    <div class="card-actions justify-end">
+  <div
+    class="card-body h-[calc(100%-1rem)] overflow-y-auto flex flex-col justify-between"
+  >
+    <div>
+      <h2 class="card-title text-base md:text-lg lg:text-xl xl:text-2xl">
+        Hi there! 👋
+      </h2>
+      <p
+        class="text-base md:text-lg lg:text-xl xl:text-2xl mt-2"
+        set:html={text}
+      />
+    </div>
+    <div class="card-actions justify-end mt-2">
       <a
         href="https://wa.me/393283539590"
         target="_blank"
-        class="btn hover:bg-brazil-green hover:text-white bg-brazil-yellow
-          font-extrabold"
-        >LET'S CHAT!</a
+        class="btn hover:bg-brazil-green hover:text-white bg-brazil-yellow font-extrabold"
       >
+        LET'S CHAT!
+      </a>
     </div>
   </div>
 </div>

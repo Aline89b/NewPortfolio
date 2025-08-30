@@ -15,12 +15,49 @@ import Skills from "@/components/skills.astro";
       <div
         class="col-span-2 row-span-4 lg:col-span-2 lg:col-start-1 lg:row-start-1"
       >
-        <About />
+        <About
+          text={`
+Ciao, sono Aline. Frontend developer autodidatta e appassionata di web design.
+Creo landing page e siti web per professionisti e piccole attività, cercando sempre di unire design semplice, funzionale e ottimizzato.
+Sono pronta a collaborare con clienti diretti per realizzare progetti chiari e rapidi, con attenzione alla user experience e all’accessibilità.
+<em>Contattami per iniziare un progetto insieme!</em>
+`}
+        />
       </div>
 
       <!-- Skills - Centro, righe 1-3 -->
       <div class="lg:col-span-3 lg:col-start-3 lg:row-span-3 lg:row-start-1">
-        <Skills />
+        <Skills
+          text="Cosa posso fare per te?"
+          services={[
+            {
+              title: "Landing page",
+              description:
+                "Landing page professionali e semplici da gestire, pensate per presentarti al meglio.",
+              icon: "🧑‍💻",
+              buttonText: "Scopri di più",
+              features: [
+                "Layout ottimizzato per Ads",
+                "Call to action mirate",
+                "Struttura veloce e leggera",
+                "Integrazione form/newsletter",
+              ],
+            },
+            {
+              title: "Siti web",
+              description:
+                "Un sito su misura per far conoscere la tua attività e acquisire clienti.",
+              icon: "🏪",
+              buttonText: "Richiedi preventivo",
+              features: [
+                "Design personalizzato",
+                "Responsive mobile-first",
+                "SEO base inclusa",
+                "Facile da aggiornare",
+              ],
+            },
+          ]}
+        />
       </div>
 
       <!-- Flags - Destra, riga 1 -->
@@ -118,18 +155,18 @@ Collegamento al portale in WordPress per la fase finale di iscrizione.`}
         >
           <Icons
             icon="angular.png"
-            title="Angularjs Framework"
+            title="Angular Framework"
             size="40px"
             className="box"
             class="icon"
           />
           <Icons
-            icon="react.png"
-            title="Reactjs Framework"
+            icon="wp.png"
+            title="wordpress CMS"
             size="40px"
             className="box"
           />
-          <Icons icon="nodejs.png" title="Nodejs" size="40px" />
+          <Icons icon="astro.png" title="Astro framework" size="40px" />
           <Icons icon="next.png" title="Nextjs" size="40px" />
           <Icons icon="git.png" title="git" size="40px" />
           <Icons icon="figma.png" title="Figma" size="40px" />

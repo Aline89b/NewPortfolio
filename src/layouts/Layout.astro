@@ -19,7 +19,9 @@ const { title } = Astro.props;
   </head>
   <body>
     <Nav />
-    <main class="flex-1 overflow-y-auto mb-2">
+    <main
+      class="flex-1 overflow-y-auto mb-2 overflow-x-hidden lg:overflow-hidden"
+    >
       <slot />
     </main>
     <Footer />
@@ -29,9 +31,10 @@ const { title } = Astro.props;
 <style is:global>
   body {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     flex-direction: column;
     background-color: black;
+    @apply font-sans text-base;
   }
 
   html {

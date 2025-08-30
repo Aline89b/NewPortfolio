@@ -1,0 +1,157 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/card.astro";
+import About from "../../components/about.astro";
+import Icons from "../../components/icons.astro";
+import Skills from "../../components/skills.astro";
+---
+
+<Layout title="Front end developer - Portfolio.">
+  <div class="flex flex-col flex-1 justify-center">
+    <div
+      class="lg:grid w-full md:grid-cols-2 lg:grid-cols-7 grid-rows-4 h-[calc(100vh-200px)] gap-3 p-2"
+    >
+      <!-- About -->
+      <div
+        class="col-span-2 row-span-4 lg:col-span-2 lg:col-start-1 lg:row-start-1"
+      >
+        <About
+          text={`
+Hi, I'm Aline. I'm a self-taught frontend developer and web design enthusiast with a background in tourism.
+I specialize in frontend technologies like <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and modern frameworks like <strong>Angular</strong> and <strong>Next.js</strong>.
+I focus on building clean, maintainable interfaces and collaborating on full-stack projects, integrating APIs and advanced functionality.
+Currently, I’m working on projects that combine <strong>Next.js, Node.js, MongoDB</strong> and other tools to create interactive web apps and landing pages for real clients.
+<em>Always eager to learn and collaborate with other freelancers or agencies worldwide.</em>
+`}
+        />
+      </div>
+
+      <!-- Skills -->
+      <div class="lg:col-span-3 lg:col-start-3 lg:row-span-3 lg:row-start-1">
+        <Skills
+          text="What Can I do for you?"
+          services={[
+            {
+              title: "Collaboration with teams",
+              description:
+                "I provide frontend support for agencies and freelancers, integrating seamlessly into existing workflows.",
+              icon: "🤝",
+              buttonText: "Let's collaborate",
+              features: [
+                "Clean and maintainable TypeScript code",
+                "Reusable UI components",
+                "Agile and Git-based workflow",
+                "Experience with remote teamwork",
+              ],
+            },
+            {
+              title: "Frontend development",
+              description:
+                "Custom UI solutions with modern frameworks and strong focus on performance and accessibility.",
+              icon: "💻",
+              buttonText: "Get in touch",
+              features: [
+                "Next.js, React, Angular expertise",
+                "Responsive & accessible design",
+                "Integration with REST/GraphQL APIs",
+                "TailwindCSS & component libraries",
+              ],
+            },
+          ]}
+        />
+      </div>
+
+      <!-- DiscoApp Angular -->
+      <div class="lg:col-span-2 lg:col-start-6 lg:row-start-1 lg:row-span-1">
+        <Card
+          urlCode="https://github.com/Aline89b/discoAppAngular"
+          urlDemo="https://disco-app-angular.vercel.app/"
+          image="/public/screenshotAngularProject.webp"
+          title="DiscoApp"
+          skills={[
+            "Angular",
+            "Typescript",
+            "Node.js",
+            "MongoDB",
+            "TailwindCSS",
+            "DaisyUI",
+          ]}
+          text={`Full stack application for event promoters, built with Angular, Node.js and MongoDB. 
+Features include multi-role authentication, CRUD operations for events and users, and external integrations like Twilio for SMS and a QR scanner for validating tickets at venue entrances. 
+The UI was styled with TailwindCSS and DaisyUI instead of Angular Material, for a lightweight but modern look.`}
+        />
+      </div>
+
+      <!-- Footprint Project -->
+      <div class="lg:col-span-2 lg:col-start-6 lg:row-start-2 lg:row-span-2">
+        <Card
+          urlDemo="https://footprint-project.vercel.app/"
+          urlCode="https://github.com/Aline89b/footprint-project"
+          image="/public/screenshotNextProject.webp"
+          title="Footprint Calculator"
+          skills={[
+            "Next.js",
+            "MongoDB",
+            "Climatiq API",
+            "MaterialUI",
+            "TailwindCSS",
+          ]}
+          text={`Non-profit web app developed in Next.js to calculate the carbon footprint of air travel. 
+Uses Climatiq API for updated emission factors, Material UI for a clean and accessible form, and MongoDB for storing newsletter subscriptions. 
+Designed to be extended to other transport types and integrated with sustainability projects.`}
+        />
+      </div>
+
+      <!-- Landing Page -->
+      <div class="lg:col-span-2 lg:col-start-6 lg:row-start-4 lg:row-span-1">
+        <Card
+          urlCode="https://github.com/Aline89b/landing-page"
+          urlDemo="https://landing-page-delta-lac-37.vercel.app/"
+          image="/public/screenshotLanding.webp"
+          title="Lead Generation Landing Page"
+          skills={[
+            "Next.js",
+            "UX/UI Design",
+            "MailerLite",
+            "WordPress",
+            "Tailwind",
+            "ShadcnUI",
+          ]}
+          text={`Landing page created in Next.js as part of a funnel connected to a WordPress portal for eco-friendly accommodations. 
+It was designed for ad campaigns, with call-to-actions integrated into MailerLite automations and a final step redirecting to the WordPress portal for user registration.`}
+        />
+      </div>
+
+      <!-- CV -->
+      <div class="col-span-2 lg:col-span-2 lg:col-start-3 lg:row-start-4">
+        <div
+          class="rounded flex p-2 bg-center justify-center bg-[url('https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg')] h-full items-center"
+        >
+          <a
+            href="/CV_FRONTEND_DEV.pdf"
+            class="btn glass hover:bg-[#0012ff] bg-[#FFCC4C] border-[#0B0C49] btn-info font font-extrabold"
+            download>Download my CV &#128521;</a
+          >
+        </div>
+      </div>
+
+      <!-- Tech Icons -->
+      <div class="lg:col-span-1 lg:col-start-5 lg:row-start-4">
+        <div
+          class="grid grid-cols-3 grid-rows-2 bg-[#424242] w-full h-full place-items-center"
+        >
+          <Icons
+            icon="/public/angular.png"
+            title="Angular Framework"
+            size="40px"
+          />
+          <Icons icon="/public/wp.png" title="React Framework" size="40px" />
+          <Icons icon="/public/astro.png" title="Node.js" size="40px" />
+          <Icons icon="/public/next.png" title="Next.js" size="40px" />
+          <Icons icon="/public/git.png" title="Git" size="40px" />
+          <Icons icon="/public/figma.png" title="Figma" size="40px" />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

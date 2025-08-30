@@ -1,76 +1,66 @@
 ---
-const services = [
-  {
-    title: "Landing page",
-    description:
-      "Landing page professionali e semplici da gestire, pensate per presentarti al meglio.",
-    icon: "🧑‍💻",
-    buttonText: "Scopri di più",
-    features: [
-      "Layout ottimizzato per Ads",
-      "Call to action mirate",
-      "Struttura veloce e leggera",
-      "Integrazione form/newsletter",
-    ],
-  },
-  {
-    title: "Siti web",
-    description:
-      "Un sito su misura per far conoscere la tua attività e acquisire clienti.",
-    icon: "🏪",
-    buttonText: "Richiedi preventivo",
-    features: [
-      "Design personalizzato",
-      "Responsive mobile-first",
-      "SEO base inclusa",
-      "Facile da aggiornare",
-    ],
-  },
-];
+interface Service {
+  title: string;
+  description: string;
+  icon?: string;
+  buttonText: string;
+  features: string[];
+}
+
+const { services = [], text }: { services?: Service[]; text?: string } =
+  Astro.props;
 ---
 
 <div
-  class="flex flex-col items-center justify-center p-4 h-full text-brazil-white"
+  class="flex flex-col items-center justify-between mb-1 h-full text-brazil-white"
 >
-  <h1 class="text-3xl font-bold mb-8 text-brazil-blue">Servizi offerti</h1>
+  <h1 class="text-3xl font-bold mb-8 text-brazil-blue">{text}</h1>
 
   <!-- grid con righe tutte della stessa altezza -->
   <div class="grid md:grid-cols-2 gap-6 auto-rows-fr w-full h-full">
     {
       services.map((s) => (
         <div class="card bg-base-100 shadow-sm h-full flex flex-col items-between md:max-h-[calc(100%-1rem)] bg-brazil-blue/60">
-          <div class="card-body flex flex-col flex-grow md:p-3 lg:p-6 md:max-h-96">
-            <div class="flex items-between flex-wrap md:max-h-96">
-              <h2 class="text-xl font-bold">{s.title}</h2>
+          <div class="card-body flex flex-col flex-grow md:p-3 xl:p-6 md:max-h-96">
+            <div class="flex items-center justify-between md:max-h-96">
+              <h2 class="text-xl xl:text-2xl font-bold">{s.title}</h2>
+              {s.icon && <span class="text-2xl">{s.icon}</span>}
             </div>
-            <p class="mt-2 md:mt-1 text-xs">{s.description}</p>
 
-            <ul class="flex flex-col gap-1 text-sm flex-grow">
-              {s.features.map((f) => (
-                <li>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="size-4 me-2 inline-block text-success"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span class="text-xs">{f}</span>
-                </li>
-              ))}
+            <p class="mt-2 md:mt-1 text-xs xl:text-xl">{s.description}</p>
+
+            <ul class="flex flex-col gap-1 text-sm xl:text-xl flex-grow">
+              {s.features
+                ? s.features.map((f: string) => (
+                    <li>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="size-4 me-2 inline-block text-success"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span class="text-xs xl:text-lg">{f}</span>
+                    </li>
+                  ))
+                : null}
             </ul>
 
             <div class="flex justify-center">
-              <button class="btn hover:bg-brazil-green hover:text-white bg-brazil-yellow font-extrabold mb-2">
+              <a
+                href="mailto:a.grianti89@gmail.com"
+                target="_blank"
+                class="btn btn-md bg-brazil-yellow hover:bg-brazil-green text-black hover:text-white border-0"
+              >
                 {s.buttonText}
-              </button>
+              </a>
             </div>
           </div>
         </div>
