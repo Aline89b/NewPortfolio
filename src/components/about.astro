@@ -8,22 +8,18 @@ const { text } = Astro.props;
 <div
   class="flex rounded bg-brazil-blue/60 text-brazil-white mb-1 lg:flex-col flex-col md:card-side w-full h-full"
 >
-  <figure class="min-h-32">
-    <img
-      class="object-cover h-full rounded"
-      src="/public/avatar.jpeg"
-      alt="Avatar"
-    />
+  <figure class="min-h-32 lg:hidden">
+    <img class="object-cover h-full rounded" src="/avatar.jpeg" alt="Avatar" />
   </figure>
   <div
     class="card-body h-[calc(100%-1rem)] overflow-y-auto flex flex-col justify-between"
   >
     <div>
-      <h2 class="card-title text-base md:text-lg lg:text-xl xl:text-2xl">
+      <h2 class="card-title text-base md:text-lg lg:text-sm xl:text-2xl">
         Hi there! 👋
       </h2>
       <p
-        class="text-base md:text-lg lg:text-xl xl:text-2xl mt-2"
+        class="text-base md:text-lg lg:text-sm xl:text-2xl mt-2"
         set:html={text}
       />
     </div>
