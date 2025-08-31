@@ -22,12 +22,14 @@ const modalId = `modal-${index}`;
   />
 
   <!-- overlay scuro -->
-  <div class="absolute inset-0 bg-brazil-blue/80"></div>
+  <div class="absolute inset-0 bg-brazil-blue/80 xl:bg-brazil-blue/60"></div>
 
   <!-- contenuto -->
   <div class="card-body relative z-10 flex flex-col justify-between">
     <!-- Titolo -->
-    <h2 class="text-white xl:text-2xl font-extrabold mb-2">{title}</h2>
+    <h2 class="text-white xl:text-xl 2xl:text-2xl font-extrabold mb-2">
+      {title}
+    </h2>
 
     <!-- Testo SOLO su mobile -->
     <div class="block md:hidden">

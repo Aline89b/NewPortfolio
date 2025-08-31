@@ -19,8 +19,8 @@ export default {
         // font-size base con line-height per viewport
         base: ['16px', '24px'],      // mobile
         lg: ['18px', '28px'],        // tablet
-        xl: ['20px', '30px'],        // desktop
-        '2xl': ['24px', '32px'],     // desktop grande
+        xl: ['20px', '26px'],        // desktop
+        '2xl': ['24px', '30px'],     // desktop grande
       },
     },
   },

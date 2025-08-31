@@ -1,7 +1,4 @@
 ---
-interface AboutProps {
-  text: string;
-}
 const { text } = Astro.props;
 ---
 
@@ -15,11 +12,11 @@ const { text } = Astro.props;
     class="card-body h-[calc(100%-1rem)] overflow-y-auto flex flex-col justify-between"
   >
     <div>
-      <h2 class="card-title text-base md:text-lg lg:text-sm xl:text-2xl">
+      <h2 class="card-title text-base md:text-lg lg:text-xl xl:text-2xl">
         Hi there! 👋
       </h2>
       <p
-        class="text-base md:text-lg lg:text-sm xl:text-2xl mt-2"
+        class="text-base md:text-lg lg:text-xl xl:text-2xl mt-2"
         set:html={text}
       />
     </div>
