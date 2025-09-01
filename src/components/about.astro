@@ -5,28 +5,28 @@ const { text } = Astro.props;
 <div
   class="flex rounded bg-brazil-blue/60 text-brazil-white mb-1 lg:flex-col flex-col md:card-side w-full h-full"
 >
-  <figure class="min-h-32 lg:hidden">
+  <figure class="min-h-32 lg:hidden xl:block">
     <img class="object-cover h-full rounded" src="/avatar.jpeg" alt="Avatar" />
   </figure>
   <div
     class="card-body h-[calc(100%-1rem)] overflow-y-auto flex flex-col justify-between"
   >
     <div>
-      <h2 class="card-title text-base md:text-lg lg:text-xl xl:text-2xl">
+      <h2 class="card-title text-base md:text-lg lg:text-lg xl:text-2xl">
         Hi there! 👋
       </h2>
       <p
-        class="text-base md:text-lg lg:text-xl xl:text-2xl mt-2"
+        class="md:text-lg lg:text-lg xl:text-lg 2xl:text-2xl mt-2"
         set:html={text}
       />
     </div>
-    <div class="card-actions justify-end mt-2">
+    <div class="card-actions justify-end mb-4">
       <a
         href="https://wa.me/393283539590"
         target="_blank"
         class="btn hover:bg-brazil-green hover:text-white bg-brazil-yellow font-extrabold"
       >
-        LET'S CHAT!
+        Parliamone!
       </a>
     </div>
   </div>

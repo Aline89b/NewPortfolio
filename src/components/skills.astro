@@ -12,21 +12,21 @@ const { services = [], text }: { services?: Service[]; text?: string } =
 ---
 
 <div
-  class="flex flex-col items-center justify-between mb-1 h-full text-brazil-white"
+  class="flex flex-col items-center justify-between mb-1 h-full xl:items-center text-brazil-white"
 >
-  <h1 class="text-3xl font-bold mb-8 text-brazil-blue">{text}</h1>
+  <h1 class="text-3xl font-bold mb-3 text-brazil-blue">{text}</h1>
 
   <div class="grid md:grid-cols-2 gap-6 auto-rows-fr w-full h-full">
     {
       services.map((s) => (
-        <div class="card bg-base-100 shadow-sm h-full flex flex-col items-between md:max-h-[calc(100%-1rem)] bg-brazil-blue/60">
-          <div class="card-body flex flex-col flex-grow md:p-3 xl:p-6 md:max-h-96 overflow-hidden">
+        <div class="card bg-base-100 shadow-sm h-full flex flex-col items-center md:max-h-[calc(100%-1rem)] bg-brazil-blue/60">
+          <div class="card-body flex flex-col flex-grow md:p-3 xl:p-6 md:max-h-96 xl:max-h-full overflow-hidden">
             <div class="flex items-center justify-between md:max-h-96">
               <h2 class="text-xl xl:text-2xl font-bold">{s.title}</h2>
               {s.icon && <span class="text-2xl">{s.icon}</span>}
             </div>
 
-            <p class="mt-2 md:mt-1 text-sm xl:text-sm">{s.description}</p>
+            <p class="mt-2 md:mt-1 text-sm xl:text-xl">{s.description}</p>
 
             <ul class="flex flex-col gap-1 text-sm xl:text-sm flex-grow">
               {s.features
@@ -46,7 +46,7 @@ const { services = [], text }: { services?: Service[]; text?: string } =
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span class="text-sm xl:text-xl 2xl:text-2xl">{f}</span>
+                      <span class="text-sm xl:text-sm 2xl:text-2xl">{f}</span>
                     </li>
                   ))
                 : null}
