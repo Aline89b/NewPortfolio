@@ -23,8 +23,8 @@ export default {
         '2xl': ['24px', '30px'],     // desktop grande
       },
        screens: {
-        'short': { 'raw': '(min-height: 700px)' },
-        'tall': { 'raw': '(max-height: 1000px)' },
+        'short': { 'raw': '(max-height: 800px)' },
+        'tall': { 'raw': '(min-height: 1000px)' },
       },
     },
   },

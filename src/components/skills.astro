@@ -19,7 +19,7 @@ const { services = [], text }: { services?: Service[]; text?: string } =
   <div class="grid md:grid-cols-2 gap-6 auto-rows-fr w-full h-full">
     {
       services.map((s) => (
-        <div class="card bg-base-100 shadow-sm h-full flex flex-col items-center md:max-h-[calc(100%-1rem)]  bg-brazil-blue/60">
+        <div class="card bg-base-100 shadow-sm h-full flex flex-col items-center md:max-h-[calc(100%-1rem)] xl:max-h-[calc(100%-2.2rem)] bg-brazil-blue/60">
           <div class="card-body flex flex-col flex-grow md:p-3 xl:p-6 md:max-h-96 xl:max-h-full overflow-hidden">
             <div class="flex items-center justify-between md:max-h-96">
               <h2 class="text-xl xl:text-2xl font-bold">{s.title}</h2>
@@ -28,7 +28,7 @@ const { services = [], text }: { services?: Service[]; text?: string } =
 
             <p class="mt-2 md:mt-1 text-sm xl:text-xl">{s.description}</p>
 
-            <ul class="flex flex-col gap-1 text-sm xl:text-sm flex-grow">
+            <ul class="flex flex-col gap-1 text-sm  flex-grow">
               {s.features
                 ? s.features.map((f: string) => (
                     <li>
@@ -46,7 +46,7 @@ const { services = [], text }: { services?: Service[]; text?: string } =
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span class="text-sm xl:text-sm 2xl:text-2xl short:text-sm">
+                      <span class="text-sm 2xl:text-2xl short:text-sm">
                         {f}
                       </span>
                     </li>
@@ -54,7 +54,7 @@ const { services = [], text }: { services?: Service[]; text?: string } =
                 : null}
             </ul>
 
-            <div class="flex justify-center">
+            <div class="flex justify-center xl:mb-4">
               <a
                 href="mailto:a.grianti89@gmail.com"
                 target="_blank"
