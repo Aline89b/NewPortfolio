@@ -22,6 +22,10 @@ export default {
         xl: ['20px', '26px'],        // desktop
         '2xl': ['24px', '30px'],     // desktop grande
       },
+       screens: {
+        'short': { 'raw': '(min-height: 700px)' },
+        'tall': { 'raw': '(max-height: 1000px)' },
+      },
     },
   },
   plugins: [
