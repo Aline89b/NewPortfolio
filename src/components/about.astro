@@ -5,7 +5,7 @@ const { text } = Astro.props;
 <div
   class="flex rounded bg-brazil-blue/60 text-brazil-white mb-1 lg:flex-col flex-col md:card-side w-full h-full"
 >
-  <figure class="min-h-32 lg:hidden 2xl:block">
+  <figure class="min-h-32 lg:hidden xl:block 2xl:block hide-image:hidden">
     <img class="object-cover h-full rounded" src="/avatar.jpeg" alt="Avatar" />
   </figure>
   <div
@@ -16,7 +16,7 @@ const { text } = Astro.props;
         Hi there! 👋
       </h2>
       <p
-        class="md:text-lg lg:text-lg xl:text-lg 2xl:text-2xl mt-2 short:text-lg"
+        class="md:text-lg lg:text-lg xl:text-lg 2xl:text-2xl mt-2 short:text-lg hide-image:text-xl"
         set:html={text}
       />
     </div>
