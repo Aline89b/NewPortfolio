@@ -26,7 +26,6 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@types/gsap": "^3.0.0",
     "daisyui": "^4.6.0",
     "tailwindcss-3d": "^1.0.6"
   }
