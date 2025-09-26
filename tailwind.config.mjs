@@ -23,7 +23,7 @@ export default {
         '2xl': ['24px', '30px'],     // desktop grande
       },
        screens: {
-        'hide-image': { 'raw': '(min-height: 700px) and (min-width: 1300px) and (max-width: 1800px)' },
+        'hide-image': { 'raw': '(min-height: 700px) and (min-width: 1300px) and (max-width: 2400px)' },
         'short': { 'raw': '(max-height: 800px)' },
         'tall': { 'raw': '(min-height: 1000px)' },
       },
