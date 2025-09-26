@@ -12,7 +12,7 @@ export default {
         },
       },
       fontFamily: {
-        // Font globale leggibile per il portfolio
+       
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
       },
       fontSize: {
